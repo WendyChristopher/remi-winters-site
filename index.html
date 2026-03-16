@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remi Winters | Your Illicit Source for 18+ Spicy Romance</title>
+    <meta name="description" content="Remi Winters — your illicit source for spicy romance with just enough plot to justify the smut. Dark romance, paranormal, contemporary, and everything your mother warned you about. 18+.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #0a0a0a;
+            --deep-black: #050505;
+            --red: #C41E3A;
+            --red-dark: #9B1830;
+            --red-glow: #E8254580;
+            --cream: #F5E6D3;
+            --cream-dim: #F5E6D3AA;
+            --white: #FAFAFA;
+            --gray: #888;
+            --dark-gray: #1a1a1a;
+            --card-bg: #111111;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--deep-black);
+            color: var(--cream);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ============ NAVBAR ============ */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(5,5,5,0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(196,30,58,0.15);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 0.6rem 2rem;
+            background: rgba(5,5,5,0.95);
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--red);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--cream-dim);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--red);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--red); }
+        .nav-links a:hover::after { width: 100%; }
+
+        .nav-hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .nav-hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--cream);
+            transition: all 0.3s;
+        }
+
+        /* ============ HERO ============ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(196,30,58,0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 50%, rgba(196,30,58,0.04) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 100%, rgba(196,30,58,0.08) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .hero-logo {
+            width: min(500px, 85vw);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-logo img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Placeholder if no logo image yet */
+        .hero-logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 900;
+            color: var(--red);
+            letter-spacing: 4px;
+            line-height: 1.1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            font-style: italic;
+            color: var(--cream-dim);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-cta-row {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn {
+            padding: 0.85rem 2.2rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.3s;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-red {
+            background: var(--red);
+            color: white;
+            border: 1px solid var(--red);
+        }
+
+        .btn-red:hover {
+            background: var(--red-dark);
+            box-shadow: 0 0 30px var(--red-glow);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--cream);
+            border: 1px solid rgba(245,230,211,0.3);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--red);
+            color: var(--red);
+        }
+
+        .hero-18plus {
+            margin-top: 3rem;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gray);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-18plus span {
+            color: var(--red);
+            font-weight: 700;
+        }
+
+        /* ============ SECTION STYLES ============ */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 1px;
+            background: var(--red);
+            margin-bottom: 2.5rem;
+        }
+
+        .full-width-divider {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(196,30,58,0.3), transparent);
+        }
+
+        /* ============ ABOUT ============ */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            color: var(--cream-dim);
+            line-height: 1.8;
+        }
+
+        .about-text .highlight {
+            color: var(--red);
+            font-weight: 500;
+        }
+
+        .fun-facts {
+            background: var(--card-bg);
+            border: 1px solid rgba(196,30,58,0.15);
+            border-radius: 4px;
+            padding: 2.5rem;
+        }
+
+        .fun-facts h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .fact {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .fact-icon {
+            color: var(--red);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .fact p {
+            font-size: 0.95rem;
+            color: var(--cream-dim);
+            line-height: 1.6;
+        }
+
+        .fact strong {
+            color: var(--cream);
+        }
+
+        /* ============ SERIES SPOTLIGHT ============ */
+        .series-section {
+            background: linear-gradient(180deg, var(--deep-black) 0%, rgba(196,30,58,0.03) 50%, var(--deep-black) 100%);
+            padding: 5rem 0;
+        }
+
+        .series-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .series-badge {
+            display: inline-block;
+            background: var(--red);
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 0.4rem 1rem;
+            border-radius: 2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .series-books {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .series-book-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(245,230,211,0.08);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .series-book-card:hover {
+            border-color: rgba(196,30,58,0.3);
+            transform: translateY(-4px);
+        }
+
+        .series-book-card.coming-soon {
+            opacity: 0.5;
+        }
+
+        .series-cover {
+            width: 100%;
+            aspect-ratio: 2/3;
+            object-fit: cover;
+            display: block;
+        }
+
+        .series-cover-placeholder {
+            width: 100%;
+            aspect-ratio: 2/3;
+            background: linear-gradient(135deg, var(--dark-gray), #1f1f1f);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .series-cover-placeholder .book-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--red);
+            margin-bottom: 0.5rem;
+        }
+
+        .series-cover-placeholder .book-label {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gray);
+        }
+
+        .series-book-info {
+            padding: 1.2rem;
+        }
+
+        .series-book-info h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.95rem;
+            color: var(--white);
+            margin-bottom: 0.4rem;
+            line-height: 1.4;
+        }
+
+        .series-book-info .status {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .status-serializing { color: #4CAF50; }
+        .status-coming { color: var(--red); }
+        .status-tba { color: var(--gray); }
+
+        /* ============ BOOKS GRID ============ */
+        .books-filter {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.4rem;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            background: transparent;
+            border: 1px solid rgba(245,230,211,0.15);
+            color: var(--cream-dim);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
+            border-radius: 2px;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--red);
+            border-color: var(--red);
+            color: white;
+        }
+
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .book-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(245,230,211,0.08);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all 0.4s;
+        }
+
+        .book-card:hover {
+            border-color: rgba(196,30,58,0.3);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .book-cover {
+            width: 100%;
+            aspect-ratio: 2/3;
+            object-fit: cover;
+            display: block;
+        }
+
+        .book-cover-placeholder {
+            width: 100%;
+            aspect-ratio: 2/3;
+            background: linear-gradient(135deg, #1a1a1a, #222);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--cream-dim);
+            line-height: 1.4;
+        }
+
+        .book-details {
+            padding: 1.5rem;
+        }
+
+        .book-details h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 0.3rem;
+            line-height: 1.4;
+        }
+
+        .book-genre {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 0.8rem;
+        }
+
+        .book-description {
+            font-size: 0.9rem;
+            color: var(--cream-dim);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .book-warnings {
+            font-size: 0.75rem;
+            color: var(--gray);
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            background: rgba(196,30,58,0.05);
+            border-left: 2px solid var(--red);
+            border-radius: 0 2px 2px 0;
+        }
+
+        .book-warnings strong {
+            color: var(--red);
+            display: block;
+            margin-bottom: 0.3rem;
+            font-size: 0.65rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .book-links {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .book-link {
+            flex: 1;
+            text-align: center;
+            padding: 0.6rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .book-link-inkitt {
+            background: var(--red);
+            color: white;
+        }
+
+        .book-link-inkitt:hover {
+            background: var(--red-dark);
+        }
+
+        .book-link-amazon {
+            background: #FF9900;
+            color: #111;
+        }
+
+        .book-link-amazon:hover {
+            background: #e68a00;
+        }
+
+        /* ============ ANNOUNCEMENTS ============ */
+        .announcements {
+            background: var(--card-bg);
+            border: 1px solid rgba(196,30,58,0.15);
+            border-radius: 4px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .announcement-item {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(245,230,211,0.06);
+        }
+
+        .announcement-item:last-child { border-bottom: none; }
+
+        .announcement-date {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 0.4rem;
+        }
+
+        .announcement-item h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 0.4rem;
+        }
+
+        .announcement-item p {
+            font-size: 0.9rem;
+            color: var(--cream-dim);
+        }
+
+        /* ============ MAILING LIST ============ */
+        .mailing-section {
+            background: linear-gradient(135deg, rgba(196,30,58,0.08) 0%, var(--deep-black) 100%);
+            border: 1px solid rgba(196,30,58,0.2);
+            border-radius: 4px;
+            padding: 4rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .mailing-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            color: var(--white);
+            margin-bottom: 0.8rem;
+        }
+
+        .mailing-section p {
+            color: var(--cream-dim);
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            font-size: 1rem;
+        }
+
+        .mailing-form {
+            display: flex;
+            gap: 0.8rem;
+            max-width: 500px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .mailing-form input[type="email"] {
+            flex: 1;
+            min-width: 250px;
+            padding: 0.85rem 1.2rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(245,230,211,0.2);
+            border-radius: 2px;
+            color: var(--cream);
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .mailing-form input[type="email"]:focus {
+            border-color: var(--red);
+        }
+
+        .mailing-form input[type="email"]::placeholder {
+            color: var(--gray);
+        }
+
+        .mailing-form button {
+            padding: 0.85rem 2rem;
+            background: var(--red);
+            color: white;
+            border: none;
+            border-radius: 2px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s;
+        }
+
+        .mailing-form button:hover {
+            background: var(--red-dark);
+            box-shadow: 0 0 30px var(--red-glow);
+        }
+
+        .mailing-note {
+            font-size: 0.75rem;
+            color: var(--gray);
+            margin-top: 1rem;
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(245,230,211,0.06);
+            margin-top: 3rem;
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-socials a {
+            color: var(--cream-dim);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .footer-socials a:hover { color: var(--red); }
+
+        .footer-copy {
+            font-size: 0.75rem;
+            color: var(--gray);
+        }
+
+        .footer-warning {
+            margin-top: 1rem;
+            font-size: 0.7rem;
+            color: var(--gray);
+            letter-spacing: 1px;
+        }
+
+        .footer-warning span { color: var(--red); font-weight: 700; }
+
+        /* ============ MOBILE ============ */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(5,5,5,0.98);
+                padding: 2rem;
+                gap: 1.5rem;
+                border-bottom: 1px solid rgba(196,30,58,0.15);
+            }
+            .nav-hamburger { display: flex; }
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .series-books { grid-template-columns: repeat(2, 1fr); }
+            .books-grid { grid-template-columns: 1fr; }
+            .mailing-section { padding: 2.5rem 1.5rem; }
+        }
+
+        /* ============ ANIMATIONS ============ */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============ CONTENT WARNING MODAL ============ */
+        .cw-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .cw-modal-overlay.active { display: flex; }
+
+        .cw-modal {
+            background: var(--card-bg);
+            border: 1px solid rgba(196,30,58,0.3);
+            border-radius: 4px;
+            padding: 2.5rem;
+            max-width: 500px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .cw-modal h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--red);
+            margin-bottom: 1rem;
+        }
+
+        .cw-modal p {
+            font-size: 0.9rem;
+            color: var(--cream-dim);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .cw-close {
+            background: var(--red);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 2px;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav id="navbar">
+        <a href="#" class="nav-logo">REMI WINTERS</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">About</a></li>
+            <li><a href="#series">Series</a></li>
+            <li><a href="#books">Books</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#subscribe">Subscribe</a></li>
+        </ul>
+        <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="hero-logo">
+            <!-- Replace src with your actual logo file -->
+            <img src="images/remi-logo.png" alt="Remi Winters" onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='block';">
+            <div id="logoFallback" style="display:none;" class="hero-logo-text">REMI WINTERS</div>
+        </div>
+        <p class="hero-tagline">Your illicit source for spicy romance with just enough plot to justify the smut.</p>
+        <div class="hero-cta-row">
+            <a href="https://www.inkitt.com/RemiWinters" target="_blank" class="btn btn-red">Read on Inkitt</a>
+            <a href="#books" class="btn btn-outline">Browse Books</a>
+        </div>
+        <p class="hero-18plus"><span>18+</span> &mdash; All content intended for mature readers only</p>
+    </section>
+
+    <div class="full-width-divider"></div>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="fade-in">
+        <p class="section-label">The Woman Behind the Filth</p>
+        <h2 class="section-title">About Remi</h2>
+        <div class="section-divider"></div>
+
+        <div class="about-grid">
+            <div class="about-text">
+                <p>
+                    I write the books your mother warned you about. Paranormal romance, contemporary heat, dark captive fantasies, and the kind of spicy that makes you check over your shoulder before turning the page.
+                </p>
+                <p>
+                    My men are possessive, unhinged, and would commit several felonies for the right woman. My women are sharp, messy, and tired of settling. If you like your romance served with a side of <span class="highlight">unbridled spice</span>, content warnings, and zero apologies &mdash; you're home.
+                </p>
+                <p>
+                    I believe women shamelessly embracing smut is political. I will die on this hill. Preferably surrounded by fictional men who are obsessed with me.
+                </p>
+                <p style="color: var(--gray); font-style: italic; font-size: 0.9rem; margin-top: 1.5rem;">
+                    Currently writing: the Fated to the Lycan King series. Currently surviving on: caffeine and spite.
+                </p>
+            </div>
+
+            <div class="fun-facts">
+                <h3>Things You Didn't Ask to Know</h3>
+
+                <div class="fact">
+                    <span class="fact-icon">&hearts;</span>
+                    <p><strong>Favorite trope:</strong> Fake dating. Give me two people pretending to be in love while actually falling in love and I will combust.</p>
+                </div>
+
+                <div class="fact">
+                    <span class="fact-icon">&starf;</span>
+                    <p><strong>Fictional crushes that shaped me:</strong> Zuko from Avatar and Danny from Danny Phantom were my gateway. One was an angsty prince with a redemption arc, the other was a ghost boy with commitment issues. In hindsight, they predicted everything I'd ever write.</p>
+                </div>
+
+                <div class="fact">
+                    <span class="fact-icon">&#9790;</span>
+                    <p><strong>Sleep schedule:</strong> Nonexistent. I am in a permanent state of needing 3 more hours. Most of my best chapters were written at 2 AM with one eye open.</p>
+                </div>
+
+                <div class="fact">
+                    <span class="fact-icon">&#9876;</span>
+                    <p><strong>Core belief:</strong> Women shamelessly embracing smut is political. Your Kindle history is a revolutionary act.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="full-width-divider"></div>
+
+    <!-- ===== SERIES SPOTLIGHT ===== -->
+    <div class="series-section" id="series">
+        <div class="series-inner fade-in">
+            <span class="series-badge">Featured Series</span>
+            <h2 class="section-title">Fated to the Lycan King</h2>
+            <div class="section-divider"></div>
+            <p style="color: var(--cream-dim); max-width: 650px; margin-bottom: 0.5rem; line-height: 1.7;">
+                One cheating husband. One Lycan King with an orgasm guarantee. A fake arrangement that was never supposed to feel this real.
+            </p>
+            <p style="color: var(--gray); font-size: 0.85rem; margin-bottom: 0;">
+                A spicy paranormal romance series with fated mates, filthy contracts, and women who upgrade.
+            </p>
+
+            <div class="series-books">
+                <!-- Book 1 -->
+                <div class="series-book-card">
+                    <img src="images/tmchftlk-cover.jpg" alt="Trading My Cheating Husband for the Lycan King" class="series-cover"
+                         onerror="this.outerHTML='<div class=\'series-cover-placeholder\'><div class=\'book-num\'>1</div><div class=\'book-label\'>Book One</div></div>'">
+                    <div class="series-book-info">
+                        <h4>Trading My Cheating Husband for the Lycan King</h4>
+                        <p class="status status-serializing">&#9679; Serializing on Inkitt</p>
+                    </div>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="series-book-card">
+                    <div class="series-cover-placeholder">
+                        <div class="book-num">2</div>
+                        <div class="book-label">Coming Soon</div>
+                    </div>
+                    <div class="series-book-info">
+                        <h4>Rejecting My Ex-Husband for the Lycan King</h4>
+                        <p class="status status-coming">&#9679; Coming Soon</p>
+                    </div>
+                </div>
+
+                <!-- Book 3 -->
+                <div class="series-book-card coming-soon">
+                    <div class="series-cover-placeholder">
+                        <div class="book-num">3</div>
+                        <div class="book-label">TBA</div>
+                    </div>
+                    <div class="series-book-info">
+                        <h4>Title TBA</h4>
+                        <p class="status status-tba">&#9679; TBA</p>
+                    </div>
+                </div>
+
+                <!-- Book 4 -->
+                <div class="series-book-card coming-soon">
+                    <div class="series-cover-placeholder">
+                        <div class="book-num">4</div>
+                        <div class="book-label">TBA</div>
+                    </div>
+                    <div class="series-book-info">
+                        <h4>Title TBA</h4>
+                        <p class="status status-tba">&#9679; TBA</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ALL BOOKS ===== -->
+    <section id="books" class="fade-in">
+        <p class="section-label">The Collection</p>
+        <h2 class="section-title">All Books</h2>
+        <div class="section-divider"></div>
+
+        <div class="books-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+            <button class="filter-btn" data-filter="ongoing">Ongoing</button>
+            <button class="filter-btn" data-filter="coming-soon">Coming Soon</button>
+        </div>
+
+        <div class="books-grid" id="booksGrid">
+
+            <!-- Trading My Cheating Husband -->
+            <div class="book-card" data-status="ongoing">
+                <img src="images/tmchftlk-cover.jpg" alt="Trading My Cheating Husband for the Lycan King" class="book-cover"
+                     onerror="this.outerHTML='<div class=\'book-cover-placeholder\'>Trading My Cheating Husband for the Lycan King</div>'">
+                <div class="book-details">
+                    <div class="book-genre">Spicy Paranormal Romance &bull; Fated to the Lycan King #1</div>
+                    <h3>Trading My Cheating Husband for the Lycan King</h3>
+                    <p class="book-description">Catch your cheating husband in a threesome? F*ck the Lycan King in an airplane bathroom thirty minutes later. Ember's fake girlfriend arrangement with Knox comes with one rule: he makes her come every single time.</p>
+                    <div class="book-warnings">
+                        <strong>Content Warnings</strong>
+                        Explicit sexual content, violence, infidelity (not between MCs), possessive/obsessive behavior, domestic abuse (past), mate bonds, degradation. 18+ only.
+                    </div>
+                    <div class="book-links">
+                        <a href="https://www.inkitt.com/stories/1602137" target="_blank" class="book-link book-link-inkitt">Read on Inkitt</a>
+                        <a href="#" class="book-link book-link-amazon" style="opacity:0.5; pointer-events:none;">Amazon &mdash; Soon</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- His Hostage -->
+            <div class="book-card" data-status="completed">
+                <img src="images/his-hostage-cover.png" alt="His Hostage" class="book-cover"
+                     onerror="this.outerHTML='<div class=\'book-cover-placeholder\'>His Hostage</div>'">
+                <div class="book-details">
+                    <div class="book-genre">Dark Captive Romance</div>
+                    <h3>His Hostage</h3>
+                    <p class="book-description">He took her. Now she belongs to him. A dark captive romance with no safe words, no gentle hands, and absolutely no apologies.</p>
+                    <div class="book-warnings">
+                        <strong>Content Warnings</strong>
+                        Explicit sexual content, captivity, dubious consent, violence, degradation, morally grey characters. 18+ only.
+                    </div>
+                    <div class="book-links">
+                        <a href="https://www.amazon.com/dp/B0GPFMZVHW/" target="_blank" class="book-link book-link-amazon">Buy on Amazon</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dirty Daddies -->
+            <div class="book-card" data-status="ongoing">
+                <img src="images/dirty-daddies-cover.png" alt="Dirty Daddies" class="book-cover"
+                     onerror="this.outerHTML='<div class=\'book-cover-placeholder\'>Dirty Daddies: An 18+ Erotic Collection</div>'">
+                <div class="book-details">
+                    <div class="book-genre">Erotic Collection</div>
+                    <h3>Dirty Daddies: An 18+ Erotic Collection</h3>
+                    <p class="book-description">Filthy. Forbidden. Unapologetic. A collection of erotic shorts that will make your phone feel like a crime scene.</p>
+                    <div class="book-warnings">
+                        <strong>Content Warnings</strong>
+                        Explicit sexual content, taboo themes, age gap, power dynamics. 18+ only.
+                    </div>
+                    <div class="book-links">
+                        <a href="https://www.inkitt.com/stories/1583116" target="_blank" class="book-link book-link-inkitt">Read on Inkitt</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dirty Daddies Bonus -->
+            <div class="book-card" data-status="ongoing">
+                <img src="images/dirty-daddies-bonus-cover.png" alt="Dirty Daddies Bonus Collection" class="book-cover"
+                     onerror="this.outerHTML='<div class=\'book-cover-placeholder\'>Dirty Daddies: Exclusive 18+ Bonus Collection</div>'">
+                <div class="book-details">
+                    <div class="book-genre">Erotic Collection &bull; Premium</div>
+                    <h3>Dirty Daddies: Exclusive 18+ Bonus Collection</h3>
+                    <p class="book-description">Your favorite one-shots from Dirty Daddies, extended and uncut. The scenes you bookmarked? They go longer, harder, and filthier than you remember.</p>
+                    <div class="book-warnings">
+                        <strong>Content Warnings</strong>
+                        Explicit sexual content, taboo themes, extreme content. 18+ only.
+                    </div>
+                    <div class="book-links">
+                        <a href="https://www.inkitt.com/stories/1663448" target="_blank" class="book-link book-link-inkitt">Read on Inkitt</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How to F*ck a Dead Biker -->
+            <div class="book-card" data-status="ongoing">
+                <img src="images/dead-biker-cover.JPEG" alt="How to F*ck a Dead Biker" class="book-cover"
+                     onerror="this.outerHTML='<div class=\'book-cover-placeholder\'>How to F*ck a Dead Biker</div>'">
+                <div class="book-details">
+                    <div class="book-genre">Dark Romance &bull; Paranormal</div>
+                    <h3>How to F*ck a Dead Biker</h3>
+                    <p class="book-description">The title is the content warning. You were warned.</p>
+                    <div class="book-warnings">
+                        <strong>Content Warnings</strong>
+                        Explicit sexual content, paranormal elements, dark themes, violence. 18+ only.
+                    </div>
+                    <div class="book-links">
+                        <a href="https://www.inkitt.com/stories/1585867" target="_blank" class="book-link book-link-inkitt">Read on Inkitt</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Book 2 Coming Soon -->
+            <div class="book-card" data-status="coming-soon" style="opacity: 0.6;">
+                <div class="book-cover-placeholder" style="font-style: normal; color: var(--red);">
+                    <div style="font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.5rem; color: var(--gray);">Fated to the Lycan King #2</div>
+                    Coming Soon
+                </div>
+                <div class="book-details">
+                    <div class="book-genre">Spicy Paranormal Romance &bull; Fated to the Lycan King #2</div>
+                    <h3>Rejecting My Ex-Husband for the Lycan King</h3>
+                    <p class="book-description">He wants her back. She's already someone else's. Knox and Ember's story continues.</p>
+                    <div class="book-links">
+                        <span class="book-link" style="background: var(--dark-gray); color: var(--gray); flex:1; text-align:center;">Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Devil's Bride Coming Soon -->
+            <div class="book-card" data-status="coming-soon" style="opacity: 0.6;">
+                <div class="book-cover-placeholder" style="font-style: normal; color: var(--red);">Coming Soon</div>
+                <div class="book-details">
+                    <div class="book-genre">Dark Mafia Erotica</div>
+                    <h3>Devil's Bride</h3>
+                    <p class="book-description">Caine Romano is not a nice guy, and that means he doesn't f*ck nice either. A deeply morally grey MMC who makes Knox look like a golden retriever.</p>
+                    <div class="book-links">
+                        <span class="book-link" style="background: var(--dark-gray); color: var(--gray); flex:1; text-align:center;">Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Teach Me, Daddy Coming Soon -->
+            <div class="book-card" data-status="coming-soon" style="opacity: 0.6;">
+                <div class="book-cover-placeholder" style="font-style: normal; color: var(--red);">Coming Soon</div>
+                <div class="book-details">
+                    <div class="book-genre">Erotic Romance</div>
+                    <h3>Teach Me, Daddy</h3>
+                    <p class="book-description">Willow &amp; Nikolai's fan-favourite one-shot from Dirty Daddies, expanded into a full story. You asked for more. You're getting more.</p>
+                    <div class="book-links">
+                        <span class="book-link" style="background: var(--dark-gray); color: var(--gray); flex:1; text-align:center;">Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Faking It with the Wrong Brother Coming Soon -->
+            <div class="book-card" data-status="coming-soon" style="opacity: 0.6;">
+                <div class="book-cover-placeholder" style="font-style: normal; color: var(--red);">Coming Soon</div>
+                <div class="book-details">
+                    <div class="book-genre">Spicy Romance</div>
+                    <h3>Faking It with the Wrong Brother</h3>
+                    <p class="book-description">Details coming soon.</p>
+                    <div class="book-links">
+                        <span class="book-link" style="background: var(--dark-gray); color: var(--gray); flex:1; text-align:center;">Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sold to My Ex's Dad Coming Soon -->
+            <div class="book-card" data-status="coming-soon" style="opacity: 0.6;">
+                <div class="book-cover-placeholder" style="font-style: normal; color: var(--red);">Coming Soon</div>
+                <div class="book-details">
+                    <div class="book-genre">Erotic Romance</div>
+                    <h3>Sold to My Ex's Dad</h3>
+                    <p class="book-description">An ex's dad erotica with a very exciting spin. That's all you're getting for now.</p>
+                    <div class="book-links">
+                        <span class="book-link" style="background: var(--dark-gray); color: var(--gray); flex:1; text-align:center;">Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Saints & Sinners Coming Soon -->
+            <div class="book-card" data-status="coming-soon" style="opacity: 0.6;">
+                <div class="book-cover-placeholder" style="font-style: normal; color: var(--red);">Coming Soon</div>
+                <div class="book-details">
+                    <div class="book-genre">Series &bull; Coming Soon</div>
+                    <h3>Saints &amp; Sinners</h3>
+                    <p class="book-description">A series. But not to be talked about right now.</p>
+                    <div class="book-links">
+                        <span class="book-link" style="background: var(--dark-gray); color: var(--gray); flex:1; text-align:center;">Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="full-width-divider"></div>
+
+    <!-- ===== NEWS / ANNOUNCEMENTS ===== -->
+    <section id="news" class="fade-in">
+        <p class="section-label">What's Happening</p>
+        <h2 class="section-title">News &amp; Updates</h2>
+        <div class="section-divider"></div>
+
+        <div class="announcements">
+            <div class="announcement-item">
+                <p class="announcement-date">2026</p>
+                <h4>Trading My Cheating Husband for the Lycan King &mdash; Coming to Amazon</h4>
+                <p>Book 1 of the Fated to the Lycan King series is getting the full Amazon KDP treatment. Professionally edited, formatted, and ready to ruin your life on Kindle. Hold your breath.</p>
+            </div>
+            <div class="announcement-item">
+                <p class="announcement-date">2026</p>
+                <h4>Book 2 Announced: Rejecting My Ex-Husband for the Lycan King</h4>
+                <p>Knox and Ember's story continues. You thought Book 1 was spicy? You're not ready for what comes next.</p>
+            </div>
+            <div class="announcement-item">
+                <p class="announcement-date">2026</p>
+                <h4>Devil's Bride &mdash; In the Works</h4>
+                <p>A dark mafia erotica with a deeply morally grey MMC. This is not Knox. He doesn't have a bow on his head. Caine Romano is not a nice guy, and that means he doesn't f*ck nice either.</p>
+            </div>
+            <div class="announcement-item">
+                <p class="announcement-date">2025</p>
+                <h4>His Hostage &mdash; Now Live on Amazon &amp; Goodreads</h4>
+                <p>A dark captive romance. He took her. Now she belongs to him. Available on <a href="https://www.amazon.com/dp/B0GPFMZVHW/" target="_blank" style="color: var(--red);">Amazon</a> and <a href="https://www.goodreads.com/book/show/248271801-his-hostage" target="_blank" style="color: var(--red);">Goodreads</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="full-width-divider"></div>
+
+    <!-- ===== MAILING LIST ===== -->
+    <section id="subscribe">
+        <div class="mailing-section fade-in">
+            <p class="section-label">Stay in the Loop</p>
+            <h2>Get the Filth First</h2>
+            <p>New releases, exclusive excerpts, cover reveals, and the occasional unhinged author update.</p>
+            <form class="mailing-form" id="mailingForm" action="#" method="POST">
+                <input type="email" name="email" placeholder="your email (we don't judge)" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <p class="mailing-note">Unsubscribe anytime. Your inbox, your rules.</p>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-socials">
+            <a href="https://www.inkitt.com/RemiWinters" target="_blank">Inkitt</a>
+            <a href="https://www.instagram.com/authorremiwinters" target="_blank">Instagram</a>
+            <a href="https://www.facebook.com/share/18Vr1xXaz5/" target="_blank">Facebook</a>
+            <a href="https://www.amazon.com/stores/Remi-Winters/author/B0GPFN4DKG" target="_blank">Amazon</a>
+        </div>
+        <p class="footer-copy">&copy; 2026 Remi Winters. All rights reserved. All filth intentional.</p>
+        <p class="footer-warning"><span>18+</span> &mdash; This site and all linked content is intended for mature readers only.</p>
+    </footer>
+
+    <!-- ===== CONTENT WARNING MODAL ===== -->
+    <div class="cw-modal-overlay" id="cwModal">
+        <div class="cw-modal">
+            <h3>Content Warning</h3>
+            <p id="cwModalText"></p>
+            <button class="cw-close" onclick="closeCWModal()">Got It</button>
+        </div>
+    </div>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile menu
+        document.getElementById('hamburger').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('open');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('open');
+            });
+        });
+
+        // Books filter
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('.book-card').forEach(card => {
+                    if (filter === 'all' || card.dataset.status === filter) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Fade in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // CW Modal
+        function showCW(text) {
+            document.getElementById('cwModalText').textContent = text;
+            document.getElementById('cwModal').classList.add('active');
+        }
+
+        function closeCWModal() {
+            document.getElementById('cwModal').classList.remove('active');
+        }
+
+        // Mailing form placeholder handler
+        document.getElementById('mailingForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = e.target.querySelector('input[type="email"]').value;
+            // TODO: Connect to MailerLite
+            alert("Thanks for subscribing! (Mailing list will be connected soon.)");
+            e.target.reset();
+        });
+    </script>
+
+</body>
+</html>

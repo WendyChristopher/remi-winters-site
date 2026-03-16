@@ -1,0 +1,45 @@
+REMI WINTERS WEBSITE - SETUP INSTRUCTIONS
+==========================================
+
+1. ADD YOUR IMAGES
+------------------
+Drop these files into the "images/" folder with these EXACT names:
+
+  remi-logo.png          - Your Remi Winters logo (the red lips/knife one)
+  tmchftlk-cover.jpg     - Trading My Cheating Husband cover
+  his-hostage-cover.jpg  - His Hostage cover
+  dirty-daddies-cover.jpg - Dirty Daddies cover (either version)
+  dirty-daddies-bonus-cover.jpg - Dirty Daddies Bonus cover
+  dead-biker-cover.jpg   - How to F*ck a Dead Biker cover
+
+(JPG or PNG both work - just match the filename)
+
+
+2. DEPLOY ON VERCEL (replace your current site)
+------------------------------------------------
+Option A: Drag & drop the whole "remi-winters-site" folder to vercel.com/new
+Option B: Push to GitHub and connect to Vercel
+
+To get a custom domain (recommended):
+- Buy remiwinters.com (~$12/year from Namecheap, Google Domains, etc.)
+- In Vercel dashboard > Settings > Domains > Add your domain
+- Follow the DNS instructions they give you
+
+
+3. CONNECT MAILING LIST (MailerLite)
+-------------------------------------
+- Sign up free at mailerlite.com
+- Create a subscriber group called "Remi Winters Readers"
+- Go to Forms > Embedded Forms > Create
+- Copy the form action URL
+- In index.html, find the <form> tag and replace action="#" with your MailerLite form URL
+- Change method to match MailerLite's instructions
+
+
+4. UPDATE YOUR AMAZON AUTHOR PAGE LINK
+---------------------------------------
+In the footer, update the Amazon link to your actual author page URL.
+
+
+That's it! The site is fully functional without images too -
+it uses styled placeholders that still look good.
